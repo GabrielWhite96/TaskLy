@@ -6,7 +6,7 @@ import {
   PlataformSubtitle,
   PlataformImage,
 } from './PlataformsSectionLP.styles';
-import PlataformImage from '../../assets/Plataform-image.png'; // Substitua pela imagem do app
+import DevicesImage from '../../assets/task_example.png'; // Substitua pela imagem do app
 
 function PlataformsSectionLP() {
   return (
@@ -17,7 +17,7 @@ function PlataformsSectionLP() {
           Acesse o seu app em qualquer dispositivo, a qualquer hora. Com sincronização em tempo real, você nunca estará longe das suas tarefas, seja no celular, tablet ou desktop.
         </PlataformSubtitle>
       </PlataformTextContainer>
-      <PlataformImage src={PlataformImage} alt="App Plataformed across multiple devices" />
+      <PlataformImage src={DevicesImage} alt="App Plataformed across multiple devices" />
     </PlataformsSectionLPContainer>
   );
 }
