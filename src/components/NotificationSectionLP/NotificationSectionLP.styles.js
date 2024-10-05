@@ -5,7 +5,7 @@ export const NotificationSectionContainer = styled.section`
   align-items: center;
   justify-content: space-around;
   padding: 80px 100px;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   text-align: center;
 
   @media (max-width: 768px) {

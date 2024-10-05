@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const EisenhowerSectionContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 80px 20px;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   text-align: center;
 
   @media (max-width: 768px) {
