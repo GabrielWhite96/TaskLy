@@ -4,7 +4,7 @@ export const NotificationSectionContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 80px 20px;
+  padding: 80px 100px;
   background-color: ${({ theme }) => theme.colors.background};
   text-align: center;
 
@@ -14,7 +14,7 @@ export const NotificationSectionContainer = styled.section`
 `;
 
 export const NotificationTextContainer = styled.div`
-  max-width: 500px;
+  max-width: 600px;
 `;
 
 export const NotificationTitle = styled.h2`
