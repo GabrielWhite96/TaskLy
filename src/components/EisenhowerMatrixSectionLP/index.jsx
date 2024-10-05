@@ -6,7 +6,7 @@ import {
   EisenhowerSubtitle,
   EisenhowerImage,
 } from './EisenhowerSectionLP.styles';
-import eisenhowerImage from '../../assets/eisenhower-image.png'; // Substitua pela imagem do app
+import eisenhowerImage from '../../assets/task_example.png'; // Substitua pela imagem do app
 
 function EisenhowerSectionLP() {
   return (
