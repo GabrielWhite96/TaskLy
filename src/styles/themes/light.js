@@ -6,7 +6,7 @@ export default {
     secondary: "#ffaa00",
     textHover: "#fff",
     background: "#fff",
-    backgroundSecondary: "#fafafa",
+    backgroundSecondary: "#f9f9f9",
     text: "#333",
   },
 };
