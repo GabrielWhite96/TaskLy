@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PlataformsSectionLP = styled.section`
+export const PlataformsSectionLPContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,8 +11,7 @@ export const PlataformsSectionLP = styled.section`
 `;
 
 export const PlataformTextContainer = styled.div`
-  max-width: 600px;
-  margin-bottom: 40px; /* Espaço entre o texto e a imagem */
+  max-width: 1000px;
 `;
 
 export const PlataformTitle = styled.h2`
