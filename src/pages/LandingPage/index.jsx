@@ -6,6 +6,7 @@ import SloganSection from '../../components/SloganSection';
 import TaskSectionLP from '../../components/TaskSectionLP';
 import NotificationSectionLP from '../../components/NotificationSectionLP';
 import EisenhowerSectionLP from '../../components/EisenhowerMatrixSectionLP';
+import PlataformsSectionLP from '../../components/PlataformsSectionLP';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ export default function LandingPage() {
       <EisenhowerSectionLP/>
       <TaskSectionLP/>
       <NotificationSectionLP/>
+      <PlataformsSectionLP/>
     </>
   );
 }
