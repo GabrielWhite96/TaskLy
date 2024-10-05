@@ -11,6 +11,10 @@ import notificationImage from "../../assets/task_example.png";
 function NotificationSectionLP() {
   return (
     <NotificationSectionContainer>
+      <NotificationImage
+        src={notificationImage}
+        alt="App showing notification feature"
+      />
       <NotificationTextContainer>
         <NotificationTitle>
           Receba notificações, sem preocupações
@@ -20,10 +24,6 @@ function NotificationSectionLP() {
           momento certo para você nunca perder uma tarefa importante.
         </NotificationSubtitle>
       </NotificationTextContainer>
-      <NotificationImage
-        src={notificationImage}
-        alt="App showing notification feature"
-      />
     </NotificationSectionContainer>
   );
 }

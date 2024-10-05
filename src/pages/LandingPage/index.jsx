@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import SloganSection from '../../components/SloganSection';
 import TaskSectionLP from '../../components/TaskSectionLP';
+import NotificationSectionLP from '../../components/NotificationSectionLP';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ export default function LandingPage() {
       <Header/>
       <SloganSection/>
       <TaskSectionLP/>
+      <NotificationSectionLP/>
     </>
   );
 }
