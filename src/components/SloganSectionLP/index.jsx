@@ -5,9 +5,9 @@ import {
   SubtitleText,
   ButtonContainer,
   ActionButton,
-} from "./SloganSection.styles";
+} from "./SloganSectionLP.styles";
 
-function SloganSection() {
+function SloganSectionLP() {
   return (
     <SloganContainer>
       <SloganText>Organize sua mente, organize sua vida</SloganText>
@@ -23,4 +23,4 @@ function SloganSection() {
   );
 }
 
-export default SloganSection;
+export default SloganSectionLP;
