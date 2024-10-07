@@ -8,7 +8,7 @@ export default {
     backgroundInput: "#333",
     background: "#222",
     backgroundSecondary: "#1d1d1d",
-    backgroundTertiary: "#1a1a1a",
+    backgroundTertiary: "#141414",
     text: "#f5f5f5",
     subText: "#666",
   },

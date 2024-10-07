@@ -8,7 +8,7 @@ import {
   DateTask,
   ButtonAndTask,
   Description,
-} from "./index.styles";
+} from "./Task.styles";
 
 // Função para formatar a data no formato dd/mm/yyyy
 const formatDate = (isoDate) => {

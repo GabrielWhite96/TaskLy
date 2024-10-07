@@ -5,7 +5,7 @@ export default {
     primary: "#ff9000",
     secondary: "#ffaa00",
     textHover: "#fff",
-    backgroundInput: "#fff",
+    backgroundInput: "#eee",
     background: "#fff",
     backgroundSecondary: "#f9f9f9",
     backgroundTertiary: "#e2e2e2",

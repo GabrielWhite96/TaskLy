@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import { rgba } from "polished";
 
 export const TaskDiv = styled.div`
   font-family: "Anek Bangla", sans-serif;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
   display: flex;
   flex-direction: column;
   width: 93%;
-  border-bottom: 1px solid #2f2f2f;
+  border-bottom: 1px solid ${({ theme }) => rgba(theme.colors.subText, 0.3)};
 `;
 
 export const TaskContainer = styled.div`
@@ -18,7 +19,7 @@ export const TaskContainer = styled.div`
   height: 45px;
   width: 93%;
   /* background-color: #3f3f3f; */
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
   padding-left: 10px;
   padding-right: 10px;
 `;
@@ -26,13 +27,13 @@ export const TaskContainer = styled.div`
 export const ButtonCheck = styled.div`
   width: 12px;
   height: 12px;
-  border-radius: 5px;
-  border: 2px solid #999999;
+  border-radius: 3px;
+  border: 2px solid ${({ theme }) => theme.colors.subText};
   margin-right: 10px;
   transition: 0.2s;
-  
+
   &:hover {
-    border: 2px solid #e68c00;
+    border: 2px solid ${({ theme }) => theme.colors.secondary};
   }
 `;
 
@@ -46,6 +47,6 @@ export const ButtonAndTask = styled.div`
 `;
 
 export const Description = styled.div`
-  color: #aaa;
+  color: ${({ theme }) => theme.colors.subText};
   margin-left: 50px;
 `;

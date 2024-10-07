@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PerfilContainer = styled.div`
   width: 40px;
   height: 40px;
-  background-color: #383838;
+  background-color: #${({ theme }) => theme.colors.background};
   border: none;
   cursor: pointer;
   background-size: cover;

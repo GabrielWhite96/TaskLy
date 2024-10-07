@@ -7,7 +7,7 @@ export const LeftMenu = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  background-color: #0a0a0a;
+  background-color: ${({ theme }) => theme.colors.backgroundTertiary };
 `;
 export const ButtonLeftMenu = styled.div`
   margin-top: 30px;
