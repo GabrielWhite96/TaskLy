@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ThemeContext } from "styled-components";
 import axios from "axios";
 import { server, showError } from "../../common";
 import LogoImg from "../../assets/Logo_64x64.png";
 import {
   RegisterContainer,
   RegisterBox,
-  RegisterTitle,
   InputGroup,
   Input,
   RegisterButton,
@@ -14,6 +14,8 @@ import {
   LogoAndTitle,
   ImgLogo,
 } from "./index.styles";
+import LogoImgB from "../../assets/Logo_Full_B_64x.png";
+import LogoImgW from "../../assets/Logo_Full_W_64x.png";
 
 import { useNavigate } from "react-router-dom";
 
@@ -23,6 +25,10 @@ export default function RegisterPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
+
+  const { title } = useContext(ThemeContext);
+
+  const logoSrc = title === "light" ? LogoImgB : LogoImgW;
 
   const handleRegister = async (e) => {
     e.preventDefault(); // Previne o comportamento padrão do formulário
@@ -55,6 +61,10 @@ export default function RegisterPage() {
     navigate("/Login");
   };
 
+  const handleLandingPage = async (e) => {
+    navigate("/LandingPage");
+  };
+
   const handleLogin = async (e) => {
     navigate("/Login");
   };
@@ -63,8 +73,7 @@ export default function RegisterPage() {
     <RegisterContainer>
       <RegisterBox>
         <LogoAndTitle>
-          <ImgLogo src={LogoImg}></ImgLogo>
-          <RegisterTitle>TaskLy</RegisterTitle>
+          <ImgLogo onClick={handleLandingPage} src={logoSrc}></ImgLogo>
         </LogoAndTitle>
         <form onSubmit={handleRegister}>
           <InputGroup>

@@ -5,7 +5,7 @@ export const RegisterContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #121212;
+  background-color: ${({ theme }) => theme.colors.background};
   font-family: "Arial", sans-serif;
   padding: 0 20px;
 `;
@@ -14,7 +14,7 @@ export const RegisterBox = styled.div`
   width: 100%;
   max-width: 360px;
   padding: 40px;
-  background-color: #1e1e1e;
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
@@ -35,13 +35,8 @@ export const LogoAndTitle = styled.div`
 `;
 
 export const ImgLogo = styled.img`
-  width: 24px;
-`;
-
-export const RegisterTitle = styled.h2`
-  color: #ffffff;
-  font-size: 24px;
-  letter-spacing: 1px;
+  width: 130px;
+  cursor: pointer;
 `;
 
 export const InputGroup = styled.div`
@@ -49,16 +44,16 @@ export const InputGroup = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 92%;
+  width: 100%;
   padding: 12px;
-  border: 1px solid #444;
+  border: 1px solid ${({ theme }) => theme.colors.backgroundInput};
   border-radius: 6px;
-  background-color: #333333;
-  color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.backgroundInput};
+  color: ${({ theme }) => theme.colors.text};
   transition: border-color 0.3s ease;
 
   &:focus {
-    border-color: #ff6600;
+    border-color: ${({ theme }) => theme.colors.primary};
     outline: none;
   }
 `;
@@ -66,8 +61,8 @@ export const Input = styled.input`
 export const RegisterButton = styled.button`
   width: 100%;
   padding: 12px;
-  background-color: #ff6600;
-  color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.text};
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -75,7 +70,7 @@ export const RegisterButton = styled.button`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #e68c00;
+    background-color: ${({ theme }) => theme.colors.secondary};
   }
 
   &:active {
@@ -88,7 +83,7 @@ export const RegisterFooter = styled.div`
 `;
 
 export const FooterLink = styled.a`
-  color: #bbbbbb;
+   ${({ theme }) => theme.colors.subText};
   font-size: 0.9em;
   text-decoration: none;
   display: block;
@@ -97,10 +92,10 @@ export const FooterLink = styled.a`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #ffffff;
+    color: ${({ theme }) => theme.colors.text};
   }
 
   &:active {
-    color: #ff6600;
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;

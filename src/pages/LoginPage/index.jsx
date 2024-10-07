@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ThemeContext } from "styled-components";
 import axios from "axios";
 import { server, showError } from "../../common";
-import LogoImg from "../../assets/Logo_64x64.png";
 import {
   LoginContainer,
   LoginBox,
-  LoginTitle,
   InputGroup,
   Input,
   LoginButton,
@@ -14,6 +13,8 @@ import {
   ImgLogo,
   LogoAndTitle,
 } from "./index.styles";
+import LogoImgB from "../../assets/Logo_Full_B_64x.png";
+import LogoImgW from "../../assets/Logo_Full_W_64x.png";
 
 import { useNavigate } from "react-router-dom";
 
@@ -22,8 +23,12 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  const { title } = useContext(ThemeContext);
+
+  const logoSrc = title === "light" ? LogoImgB : LogoImgW;
+
   const handleLogin = async (e) => {
-    e.preventDefault(); // Previne o comportamento padrão do formulário
+    e.preventDefault();
 
     try {
       const response = await axios.post(`${server}/signin`, {
@@ -53,6 +58,10 @@ export default function LoginPage() {
     navigate("/Register");
   };
 
+  const handleLandingPage = async (e) => {
+    navigate("/LandingPage");
+  };
+
   const handleForgetPassword = async (e) => {
     alert("Ainda em Construção!!!");
   };
@@ -61,8 +70,7 @@ export default function LoginPage() {
     <LoginContainer>
       <LoginBox>
         <LogoAndTitle>
-          <ImgLogo src={LogoImg}></ImgLogo>
-          <LoginTitle>TaskLy</LoginTitle>
+          <ImgLogo onClick={handleLandingPage} src={logoSrc}></ImgLogo>
         </LogoAndTitle>
         <form onSubmit={handleLogin}>
           <InputGroup>

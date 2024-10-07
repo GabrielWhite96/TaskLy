@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/Header";
 import SloganSectionLP from "../../components/SloganSectionLP";
@@ -10,15 +9,6 @@ import PlataformsSectionLP from "../../components/PlataformsSectionLP";
 import Footer from "../../components/Footer";
 
 export default function LandingPage() {
-  const navigate = useNavigate();
-
-  const handleRegisterClick = () => {
-    navigate("/register");
-  };
-
-  const handleLoginClick = () => {
-    navigate("/login");
-  };
 
   return (
     <>

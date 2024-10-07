@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "styled-components";
+import { useNavigate } from "react-router-dom";
 import {
   HeaderContainer,
   Logo,
@@ -17,10 +18,20 @@ export default function Header() {
   const { title } = useContext(ThemeContext);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const navigate = useNavigate();
+
   const logoSrc = title === "light" ? LogoImgB : LogoImgW;
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleRegister = async (e) => {
+    navigate("/Register");
+  };
+
+  const handleLoginPage = async (e) => {
+    navigate("/Login");
   };
 
   return (
@@ -32,12 +43,12 @@ export default function Header() {
         <NavButton>Apps</NavButton>
         <NavButton>Premium</NavButton>
         <NavButton>Central de Ajuda</NavButton>
-        <NavButton>Entrar</NavButton>
-        <NavButtonRegister>Registrar</NavButtonRegister>
+        <NavButton onClick={handleLoginPage}>Entrar</NavButton>
+        <NavButtonRegister onClick={handleRegister}>Registrar</NavButtonRegister>
       </NavLinks>
 
       <MenuButton onClick={toggleMenu}>
-        <FaBars /> 
+        <FaBars />
       </MenuButton>
 
       <MobileMenu isOpen={menuOpen}>
