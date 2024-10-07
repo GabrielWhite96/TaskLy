@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  HomeContainer,
-  LeftMenu,
-  MainContainer,
-  OneTaskContainer,
-  TasksContainer,
-  ButtonLeftMenu,
-} from "./index.styles";
+import { HomeContainer, ButtonLeftMenu } from "./HomePage.styles";
 
 import { useNavigate } from "react-router-dom";
 
@@ -16,10 +9,11 @@ import imgPerfil from "../../assets/perfil.jpeg";
 import imgTasks from "../../assets/tarefas.png";
 import imgExit from "../../assets/sair.png";
 
-import PerfilIcon from "./Perfil";
-import ButtonMenu from "../../components/ButtonMenu";
 import Task from "../../components/Task";
 import TaskList from "../../components/TasksList";
+import HomeLeftMenu from "../../components/HomeLeftMenu";
+import HomeMainContainer from "../../components/HomeMainsContainer";
+import HomeTaskContainer from "../../components/HomeTaskContainer";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -35,29 +29,9 @@ export default function HomePage() {
 
   return (
     <HomeContainer>
-      <LeftMenu>
-        <PerfilIcon
-          image={imgPerfil}
-          style={{ marginTop: "40px" }}
-          onClick={inConstruction}
-        ></PerfilIcon>
-        <ButtonLeftMenu>
-          <ButtonMenu image={imgTasks} onClick={inConstruction} />
-        </ButtonLeftMenu>
-        <ButtonLeftMenu>
-          <ButtonMenu image={imgMatrix} onClick={inConstruction} />
-        </ButtonLeftMenu>
-        <ButtonLeftMenu>
-          <ButtonMenu image={imgConfig} onClick={inConstruction} />
-        </ButtonLeftMenu>
-        <ButtonLeftMenu>
-          <ButtonMenu image={imgExit} onClick={handleLogout} />
-        </ButtonLeftMenu>
-      </LeftMenu>
-      <MainContainer></MainContainer>
-      <TasksContainer>
-        <TaskList></TaskList>
-      </TasksContainer>
+      <HomeLeftMenu />
+      <HomeMainContainer />
+      <HomeTaskContainer />
       {/* <OneTaskContainer></OneTaskContainer> */}
     </HomeContainer>
   );

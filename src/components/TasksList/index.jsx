@@ -14,19 +14,18 @@ import {
   TimeInput,
   AddTaskContainer,
   TitleInput,
-} from "./index.styles";
+} from "./TasksList.styles";
 
-export default function TaskList() {
+export default function TasksList() {
   const [taskList, setTaskList] = useState([]);
   const [taskDesc, setTaskDesc] = useState("");
-  const [taskTitle, setTaskTitle] = useState(""); // Novo estado para o título
+  const [taskTitle, setTaskTitle] = useState("");
   const [taskDate, setTaskDate] = useState("");
-  const [taskTime, setTaskTime] = useState(""); // Estado para armazenar a hora
-
+  const [taskTime, setTaskTime] = useState("");
   // Função para buscar tarefas com o token
   useEffect(() => {
     const fetchTasks = async () => {
-      const token = localStorage.getItem("token"); // Pega o token do localStorage
+      const token = localStorage.getItem("token");
       if (!token) {
         console.error("Nenhum token encontrado. Usuário não autenticado.");
         return;
@@ -34,7 +33,7 @@ export default function TaskList() {
 
       try {
         const response = await axios.get(`${server}/tasks`, {
-          headers: { Authorization: `Bearer ${token}` }, // Inclui o token no cabeçalho
+          headers: { Authorization: `Bearer ${token}` },
         });
         if (response.data) {
           setTaskList(response.data);
@@ -48,8 +47,7 @@ export default function TaskList() {
 
   const handleFinish = async (taskId) => {
     const token = localStorage.getItem("token");
-    if (!token) return; // Garante que o token está presente
-
+    if (!token) return;
     try {
       await axios.delete(`${server}/tasks/${taskId}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -65,7 +63,7 @@ export default function TaskList() {
 
   // Função para adicionar uma nova tarefa
   const handleAddTask = async () => {
-    if (!taskDate || !taskTitle.trim()) return; // Verifica se todos os campos foram fornecidos
+    if (!taskDate || !taskTitle.trim()) return;
 
     const formattedDate = invertDateFormat(taskDate);
 
@@ -86,8 +84,8 @@ export default function TaskList() {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTaskList(updatedTasks.data);
-      setTaskDesc(""); // Limpa o input
-      setTaskTitle(""); // Limpa o campo de título
+      setTaskDesc("");
+      setTaskTitle("");
       setTaskDate("");
       setTaskTime("");
     } catch (error) {
@@ -114,12 +112,12 @@ export default function TaskList() {
         <DateInput
           type="date"
           value={taskDate}
-          onChange={(e) => setTaskDate(e.target.value)} // Atualiza o estado de data
+          onChange={(e) => setTaskDate(e.target.value)}
         />
         <TimeInput
-          type="time" // Input para a hora no formato xx:xx
+          type="time"
           value={taskTime}
-          onChange={(e) => setTaskTime(e.target.value)} // Atualiza o estado de hora
+          onChange={(e) => setTaskTime(e.target.value)}
         />
         <AddButton onClick={handleAddTask}>Adicionar Tarefa</AddButton>
       </AddTaskContainer>
