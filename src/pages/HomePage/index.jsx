@@ -14,6 +14,7 @@ import TaskList from "../../components/TasksList";
 import HomeLeftMenu from "../../components/HomeLeftMenu";
 import HomeMainContainer from "../../components/HomeMainsContainer";
 import HomeTaskContainer from "../../components/HomeTaskContainer";
+import HomeFocusTask from '../../components/HomeFocusTask';
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ export default function HomePage() {
       <HomeLeftMenu />
       <HomeMainContainer />
       <HomeTaskContainer />
-      {/* <OneTaskContainer></OneTaskContainer> */}
+      <HomeFocusTask/>
     </HomeContainer>
   );
 }
